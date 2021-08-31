@@ -1,0 +1,7 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/DataAccess/bin/Debug/net5.0
+/Domain/bin/Debug/net5.0
+/PruebaNetDeveloper/bin/Debug/net5.0-windows

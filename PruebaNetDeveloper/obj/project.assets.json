@@ -1,26 +1,63 @@
 {
   "version": 3,
   "targets": {
-    "net5.0-windows7.0": {}
+    "net5.0-windows7.0": {
+      "DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccess.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../DataAccess/DataAccess.csproj",
+      "msbuildProject": "../DataAccess/DataAccess.csproj"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0-windows7.0": []
+    "net5.0-windows7.0": [
+      "Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\oscar\\.nuget\\packages\\": {}
+    "C:\\Users\\moler\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oscar\\source\\repos\\PruebaNetDeveloper\\PruebaNetDeveloper\\PruebaNetDeveloper.csproj",
+      "projectUniqueName": "C:\\Users\\moler\\source\\repos\\molero86\\PruebaNetDeveloper\\PruebaNetDeveloper\\PruebaNetDeveloper.csproj",
       "projectName": "PruebaNetDeveloper",
-      "projectPath": "C:\\Users\\oscar\\source\\repos\\PruebaNetDeveloper\\PruebaNetDeveloper\\PruebaNetDeveloper.csproj",
-      "packagesPath": "C:\\Users\\oscar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oscar\\source\\repos\\PruebaNetDeveloper\\PruebaNetDeveloper\\obj\\",
+      "projectPath": "C:\\Users\\moler\\source\\repos\\molero86\\PruebaNetDeveloper\\PruebaNetDeveloper\\PruebaNetDeveloper.csproj",
+      "packagesPath": "C:\\Users\\moler\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\moler\\source\\repos\\molero86\\PruebaNetDeveloper\\PruebaNetDeveloper\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\oscar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\moler\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -33,7 +70,11 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\moler\\source\\repos\\molero86\\PruebaNetDeveloper\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\moler\\source\\repos\\molero86\\PruebaNetDeveloper\\Domain\\Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

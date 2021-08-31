@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\oscar\\.nuget\\packages\\": {}
+    "C:\\Users\\moler\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oscar\\source\\repos\\PruebaNetDeveloper\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\moler\\source\\repos\\molero86\\PruebaNetDeveloper\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\oscar\\source\\repos\\PruebaNetDeveloper\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\oscar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oscar\\source\\repos\\PruebaNetDeveloper\\DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\moler\\source\\repos\\molero86\\PruebaNetDeveloper\\DataAccess\\DataAccess.csproj",
+      "packagesPath": "C:\\Users\\moler\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\moler\\source\\repos\\molero86\\PruebaNetDeveloper\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\oscar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\moler\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
