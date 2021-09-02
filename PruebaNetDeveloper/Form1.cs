@@ -107,8 +107,8 @@ namespace PruebaNetDeveloper
             WebClient webClient = new WebClient();
             webClient.DownloadFileCompleted += new AsyncCompletedEventHandler(Completed);
             webClient.DownloadProgressChanged += new DownloadProgressChangedEventHandler(ProgressChanged);
-            webClient.DownloadFileAsync(new Uri(string.Format(ConfigurationManager.AppSettings["BORMEUrl"], downloadingDate.Year, downloadingDate.Month, downloadingDate.Day)),
-                Path.Combine(ConfigurationManager.AppSettings["DownloadedPDFRoute"], "\\" + downloadingDate.ToShortDateString()));
+            webClient.DownloadFileAsync(new Uri("https://www.boe.es/borme/dias/2021/08/30/pdfs/BORME-A-2021-166-24.pdf"),
+                Path.Combine(Directory.GetCurrentDirectory(), downloadingDate.ToString("yyyy_MM_dd")));
         }
 
         private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
@@ -120,6 +120,12 @@ namespace PruebaNetDeveloper
         private void Completed(object sender, AsyncCompletedEventArgs e)
         {
             lblDownloadLog.Text = "Completed";
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            companiesService.Dispose();
+            syncRegistriesService.Dispose();
         }
     }
 

@@ -5,13 +5,13 @@ using System.Linq;
 
 namespace Domain
 {
-    public class CompaniesService
+    public class CompaniesService : IDisposable
     {
         private DataBaseContext dbContext { get; set; }
 
         public CompaniesService()
         {
-            this.dbContext = new DataBaseContext();        
+            this.dbContext = DataBaseContext.GetInstance();        
         }
 
         public ICollection<Company> GetAllCompanies()
@@ -39,5 +39,9 @@ namespace Domain
             return dbContext.GetAllCompanies().Select(c => c.Location).Distinct().ToList();
         }
 
+        public void Dispose()
+        {
+            ((IDisposable)dbContext).Dispose();
+        }
     }
 }

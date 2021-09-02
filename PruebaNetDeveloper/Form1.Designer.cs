@@ -30,24 +30,24 @@ namespace PruebaNetDeveloper
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.lblDownloadLog = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbLocations = new System.Windows.Forms.ComboBox();
+            this.tbNameObjectFilter = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pbDownload = new System.Windows.Forms.ProgressBar();
+            this.btnDownloadInfo = new System.Windows.Forms.Button();
             this.btnClearFilters = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.tbNameObjectFilter = new System.Windows.Forms.TextBox();
-            this.cbLocations = new System.Windows.Forms.ComboBox();
             this.mcFilterCalendar = new System.Windows.Forms.MonthCalendar();
             this.dgvCompaniesList = new System.Windows.Forms.DataGridView();
-            this.btnDownloadInfo = new System.Windows.Forms.Button();
-            this.pbDownload = new System.Windows.Forms.ProgressBar();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblDownloadLog = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompaniesList)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompaniesList)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -74,6 +74,28 @@ namespace PruebaNetDeveloper
             this.splitContainer1.SplitterDistance = 204;
             this.splitContainer1.TabIndex = 0;
             // 
+            // lblDownloadLog
+            // 
+            this.lblDownloadLog.AutoSize = true;
+            this.lblDownloadLog.Location = new System.Drawing.Point(11, 188);
+            this.lblDownloadLog.Name = "lblDownloadLog";
+            this.lblDownloadLog.Size = new System.Drawing.Size(51, 15);
+            this.lblDownloadLog.TabIndex = 10;
+            this.lblDownloadLog.Text = "Stopped";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cbLocations);
+            this.groupBox1.Controls.Add(this.tbNameObjectFilter);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(9, 268);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(193, 140);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filters";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -83,6 +105,23 @@ namespace PruebaNetDeveloper
             this.label3.TabIndex = 7;
             this.label3.Text = "Location";
             // 
+            // cbLocations
+            // 
+            this.cbLocations.FormattingEnabled = true;
+            this.cbLocations.Location = new System.Drawing.Point(2, 105);
+            this.cbLocations.Name = "cbLocations";
+            this.cbLocations.Size = new System.Drawing.Size(183, 23);
+            this.cbLocations.TabIndex = 2;
+            this.cbLocations.SelectedIndexChanged += new System.EventHandler(this.cbLocations_SelectedIndexChanged);
+            // 
+            // tbNameObjectFilter
+            // 
+            this.tbNameObjectFilter.Location = new System.Drawing.Point(2, 46);
+            this.tbNameObjectFilter.Name = "tbNameObjectFilter";
+            this.tbNameObjectFilter.Size = new System.Drawing.Size(183, 23);
+            this.tbNameObjectFilter.TabIndex = 3;
+            this.tbNameObjectFilter.TextChanged += new System.EventHandler(this.tbNameObjectFilter_TextChanged);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -91,6 +130,23 @@ namespace PruebaNetDeveloper
             this.label2.Size = new System.Drawing.Size(119, 15);
             this.label2.TabIndex = 6;
             this.label2.Text = "Name / Social Object";
+            // 
+            // pbDownload
+            // 
+            this.pbDownload.Location = new System.Drawing.Point(9, 174);
+            this.pbDownload.Name = "pbDownload";
+            this.pbDownload.Size = new System.Drawing.Size(192, 11);
+            this.pbDownload.TabIndex = 1;
+            // 
+            // btnDownloadInfo
+            // 
+            this.btnDownloadInfo.Location = new System.Drawing.Point(9, 207);
+            this.btnDownloadInfo.Name = "btnDownloadInfo";
+            this.btnDownloadInfo.Size = new System.Drawing.Size(192, 24);
+            this.btnDownloadInfo.TabIndex = 8;
+            this.btnDownloadInfo.Text = "Download Info";
+            this.btnDownloadInfo.UseVisualStyleBackColor = true;
+            this.btnDownloadInfo.Click += new System.EventHandler(this.btnDownloadInfo_Click);
             // 
             // btnClearFilters
             // 
@@ -110,23 +166,6 @@ namespace PruebaNetDeveloper
             this.button1.TabIndex = 4;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // tbNameObjectFilter
-            // 
-            this.tbNameObjectFilter.Location = new System.Drawing.Point(2, 46);
-            this.tbNameObjectFilter.Name = "tbNameObjectFilter";
-            this.tbNameObjectFilter.Size = new System.Drawing.Size(183, 23);
-            this.tbNameObjectFilter.TabIndex = 3;
-            this.tbNameObjectFilter.TextChanged += new System.EventHandler(this.tbNameObjectFilter_TextChanged);
-            // 
-            // cbLocations
-            // 
-            this.cbLocations.FormattingEnabled = true;
-            this.cbLocations.Location = new System.Drawing.Point(2, 105);
-            this.cbLocations.Name = "cbLocations";
-            this.cbLocations.Size = new System.Drawing.Size(183, 23);
-            this.cbLocations.TabIndex = 2;
-            this.cbLocations.SelectedIndexChanged += new System.EventHandler(this.cbLocations_SelectedIndexChanged);
             // 
             // mcFilterCalendar
             // 
@@ -150,44 +189,6 @@ namespace PruebaNetDeveloper
             this.dgvCompaniesList.Size = new System.Drawing.Size(592, 450);
             this.dgvCompaniesList.TabIndex = 0;
             // 
-            // btnDownloadInfo
-            // 
-            this.btnDownloadInfo.Location = new System.Drawing.Point(9, 207);
-            this.btnDownloadInfo.Name = "btnDownloadInfo";
-            this.btnDownloadInfo.Size = new System.Drawing.Size(192, 24);
-            this.btnDownloadInfo.TabIndex = 8;
-            this.btnDownloadInfo.Text = "Download Info";
-            this.btnDownloadInfo.UseVisualStyleBackColor = true;
-            this.btnDownloadInfo.Click += new System.EventHandler(this.btnDownloadInfo_Click);
-            // 
-            // pbDownload
-            // 
-            this.pbDownload.Location = new System.Drawing.Point(9, 174);
-            this.pbDownload.Name = "pbDownload";
-            this.pbDownload.Size = new System.Drawing.Size(192, 11);
-            this.pbDownload.TabIndex = 1;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.cbLocations);
-            this.groupBox1.Controls.Add(this.tbNameObjectFilter);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(9, 268);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(193, 140);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filters";
-            // 
-            // lblDownloadLog
-            // 
-            this.lblDownloadLog.AutoSize = true;
-            this.lblDownloadLog.Location = new System.Drawing.Point(11, 188);
-            this.lblDownloadLog.Name = "lblDownloadLog";
-            this.lblDownloadLog.Size = new System.Drawing.Size(0, 15);
-            this.lblDownloadLog.TabIndex = 10;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -196,14 +197,15 @@ namespace PruebaNetDeveloper
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "BORME Reader";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCompaniesList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompaniesList)).EndInit();
             this.ResumeLayout(false);
 
         }
